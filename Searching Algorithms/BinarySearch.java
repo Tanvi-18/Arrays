@@ -1,3 +1,5 @@
+package com.jsp.SearchingAlgorithms;
+
 public class BinarySearch {
 	
 	public static void binarySearch(int arr[], int key) {
@@ -9,17 +11,16 @@ public class BinarySearch {
 			int mid = (low+high)/2;
 			
 			if(arr[mid]==key) {
-				System.out.println("Element is found at " + mid);
+				System.out.println("Element is found at index " + mid);
 				break;
-			}else
-				if(arr[mid]>key) {
+			}else if(arr[mid]>key) {
 					high = mid-1;
-				}else
-					if(arr[mid]<key) {
+			}else if(arr[mid]<key) {
 						low = mid+1;
-					}
+			}if(low>high) {
+				System.out.println("Element not found");
+			}
 		}
-		System.out.println("Element not found");
 	}
 	
 	
@@ -28,3 +29,4 @@ public class BinarySearch {
 		binarySearch(arr, 18);
 	}
 }
+
